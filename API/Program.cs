@@ -1,3 +1,5 @@
+using Application.Features.Core;
+using Application.Features.Queries;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,8 +12,18 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-    builder.Services.AddCors();
+
 });
+builder.Services.AddCors();
+builder.Services.AddMediatR(cfg =>
+{
+    cfg.RegisterServicesFromAssemblyContaining<GetActivityList>();
+    cfg.LicenseKey = builder.Configuration["Licences:MediatR"];
+});
+builder.Services.AddAutoMapper(cfg =>
+{
+    cfg.LicenseKey = builder.Configuration["Licences:MediatR"];
+}, typeof(MappingProfiles));
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
