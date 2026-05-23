@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="API/API.csproj" Id="13744e36-231e-4249-9820-1c06c1dd340d" />
+    <Project Path="Application/Application.csproj" Id="011a64e4-650b-4079-bda8-ff673f73375e" />
+    <Project Path="Domain/Domain.csproj" Id="fc60739b-6b9c-43a2-8ca9-f2df8604bdcc" />
+    <Project Path="Infrastructure/Infrastructure.csproj" Id="43c7192e-9826-4a04-9c69-cf1b8a89f401" />
+    <Project Path="Test/Test.csproj" Id="dbacac46-a92d-4fb8-9046-2817b92a9683" />
+  </Folder>
+  <Project Path="Client/client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>
